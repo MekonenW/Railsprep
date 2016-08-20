@@ -1,0 +1,87 @@
+<style>#one, #two{width: 400px; display: inline-block; vertical-align: top;border: 2px solid black; margin: 20px; padding: 10px} .error{color: red}</style>
+
+<div id ='one'>
+    <div class= 'error'>
+        <% if flash[:errors] %>
+                <% flash[:errors].each do |error| %>
+                        <p> <%= error %> </p> 
+                <% end %>
+        <% end %>
+</div>
+	<h2>Lender</h2>
+	<form action='/lenders' method='post'>
+	<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<p>First Name:</p> 
+                <input type="text" name="lender[first_name]">
+        <p>Last Name: </p>
+                <input type="text" name="lender[last_name]">
+        <p>Email:</p> 
+                <input type="text" name="lender[email]">
+        <p>Password: </p>
+                <input type="password" name="lender[password]">
+        <p>Confirm Password: </p>
+                <input type="password" name="lender[password_confirmation]"></p>
+        <p>Money:</p>
+                <select name='lender[money]'>
+                <option value='100'>100</option>
+                <option value='500'>500</option>
+                <option value='1000'>1000</option>
+                <option value='5000'>5000</option>
+                <option value='10000'>10000</option>
+                </select>
+        
+        <p><input type="submit" value="Lender Register"></p>
+
+	</form>
+</div>
+
+<div id ='two'>
+    <div class= 'error'>
+        <% if flash[:error] %>
+                <% flash[:error].each do |err| %>
+                        <p> <%= err %> </p> 
+                <% end %>
+        <% end %>
+    </div>
+
+        <h2>Borrower</h2>
+
+	<form action='/borrowers' method='post'>
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+	<p>First Name:</p> 
+                <input type="text" name="borrower[first_name]">
+        <p>Last Name: </p>
+                <input type="text" name="borrower[last_name]">
+        <p>Email:</p> 
+                <input type="text" name="borrower[email]">
+        <p>Password: </p>
+                <input type="password" name="borrower[password]">
+        <p>Confirm Password:</p> 
+                <input type="password" name="borrower[password_confirmation]">
+        <p>Purpose: </p>
+                <input type= 'text' name='borrower[purpose]'>
+        <p>Description: </p>
+            <input type='text' name='borrower[description]'>
+        <p>Money:</p>
+                <select name='borrower[money]'>
+                <option value='25'>25</option>
+                <option value='50'>50</option>
+                <option value='100'>100</option>
+                <option value='500'>500</option>
+                <option value='1000'>1000</option>
+                <option value='5000'>5000</option>
+                <option value='10000'>10000</option>
+                </select>
+        <p>raised: </p>
+            <input type='text' name='borrower[raised]'>
+
+
+        
+        <p><input type="submit" value="Borrower Register"></p>
+<p>
+	</form>
+</div>
+
+<h4><a href="/sessions">Already a member?<p></a></h4>
+
+

@@ -1,0 +1,14 @@
+<style>#one{width: 600px; display: inline-block; vertical-align: top;border: 2px solid black; margin: 20px; padding: 10px} .error{color: red}</style>
+<div id='one'>
+
+	<h2>Log In</h2>
+	<form action='/sessions' method='post'>
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+		<p><input type='email' name='email' placeholder='Email'></p>
+		<p><input type='password' name='password' placeholder='Password'></p>
+		<div class='error'><%= flash[:err]%></div>
+		<p><input type='submit' value='Log In'></p>
+	</form>
+
+</div>
+<h4><a href="/">Click here to register</a></h4>

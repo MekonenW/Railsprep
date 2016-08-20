@@ -1,0 +1,55 @@
+<style>table{width: 800px} .left, .right{border: 2px solid black; width: 450px; margin: 10px; padding: 10px; vertical-align: top; display: inline-block;}</style>
+<h3><a href="/sessions" data-method='delete'>Logout</a></h3>
+<h3> Name: <%= @lender.first_name %>  <%= @lender.last_name %></h3>
+<h3>Account balance:<%= @lender.money %></h3>
+<p>List of people in need of help</p>
+<table border='1'>
+	<tr>
+		<th>Name</th>
+		<th>Need Money for</th>
+		<th>Reason for Loan</th>
+		<th>Amount Needed</th>
+		<th>Amount Raised</th>
+
+	</tr>
+	<tr>
+		<td><%= @borrower.first_name %>  <%= @borrower.last_name %></td>
+		<td><%= @borrower.purpose %></td>
+		<td><%= @borrower.description %></td>
+		<td><%= @borrower.money %></td>
+		<td><%= @borrower.money %></td>
+
+
+	</tr>
+
+</table>
+<p>List of people you lend money to</p>
+
+<table border='1'>
+	<tr>
+		<th>Name</th>
+		<th>Need Money for</th>
+		<th>Reason for Loan</th>
+		<th>Amount Needed</th>
+		<th>Amount Raised</th>
+		<th>Amount lent</th>
+
+
+	</tr>
+	<tr>
+		<td><%= @borrower.first_name %><%= @borrower.last_name %></td>
+		<td><%= @borrower.purpose %></td>
+		<td><%= @borrower.description %></td>
+		<td><%= @borrower.money %></td>
+		<td><%= @borrower.money %></td>
+		<td><%= @borrower.money %></td>
+
+
+
+
+
+	</tr>
+
+</table>
+
+
